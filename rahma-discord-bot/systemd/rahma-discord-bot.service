@@ -1,0 +1,18 @@
+[Unit]
+Description=Rahma Islamic Discord Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=YOUR_LINUX_USER
+WorkingDirectory=/opt/rahma-discord-bot
+EnvironmentFile=/opt/rahma-discord-bot/.env
+ExecStart=/opt/rahma-discord-bot/.venv/bin/python bot.py
+Restart=always
+RestartSec=8
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
